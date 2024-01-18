@@ -1,0 +1,113 @@
+<section class="mx-4 top position-relative">
+  <div class="px-4 py-3 bg-white border rounded-3">
+    <h5>DataView</h5>
+    <div
+      class="mt-3 p-3 bg-light d-flex justify-content-between border-top border-bottom"
+    >
+      <select
+        class="form-select w-25"
+        #price
+        (change)="sortByPrice(price.value)"
+      >
+        <option value="high">Price High to Low</option>
+        <option value="low">Price Low to High</option>
+      </select>
+      <input
+        type="text"
+        class="form-control w-25"
+        placeholder="Search by Name"
+        (keyup)="searchData($event)"
+      />
+      <div>
+        <button
+          class="btn border-end-0 border"
+          [ngClass]="{ 'bg-primary text-white': listView }"
+          (click)="listView = true"
+        >
+          <i class="pi pi-align-justify"></i>
+        </button>
+        <button
+          class="btn border-start-0 bg-primary border"
+          [ngClass]="{ 'bg-primary text-white': !listView }"
+          (click)="listView = false"
+        >
+          <i class="pi pi-th-large"></i>
+        </button>
+      </div>
+    </div>
+    <div *ngIf="listView">
+      <div *ngFor="let product of filterProducts" class="m-5">
+        <div class="d-flex justify-content-lg-between flex-wrap">
+          <img
+            src="assets/images/product/{{ product.image }}"
+            class="shadow"
+            width="140"
+            height="90"
+          />
+          <div>
+            <h5 class="fw-bold mb-0">{{ product.name }}</h5>
+            <p class="mb-0">{{ product.description }}</p>
+            <i class="pi pi-tag me-2 fw-bold"></i
+            ><span class="fw-bold font-14px">{{ product.category }}</span>
+          </div>
+          <div>
+            <h5 class="fw-bold">${{ product.price }}</h5>
+            <button class="btn btn-primary py-1 font-14px">
+              <i class="pi pi-shopping-cart me-2"></i>Add to Cart
+            </button>
+            <p
+              class="font-12px fw-bold px-2 mt-2 rounded-2"
+              [ngClass]="{'product-instock':product.inventoryStatus==='INSTOCK',
+        'product-outstock':product.inventoryStatus==='OUTOFSTOCK',
+        'product-lowstock':product.inventoryStatus==='LOWSTOCK',
+       }"
+            >
+              {{ product.inventoryStatus }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!listView">
+      <div class="m-5">
+        <div class="row">
+          <div class="col-4" *ngFor="let product of filterProducts">
+            <div class="border rounded-4 p-4">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <i class="pi pi-tag me-2 fw-bold"></i
+                  ><span class="fw-bold font-14px">{{ product.category }}</span>
+                </div>
+                <p
+                  class="font-12px fw-bold px-2 rounded-2"
+                  [ngClass]="{'product-instock':product.inventoryStatus==='INSTOCK',
+              'product-outstock':product.inventoryStatus==='OUTOFSTOCK',
+              'product-lowstock':product.inventoryStatus==='LOWSTOCK',
+             }"
+                >
+                  {{ product.inventoryStatus }}
+                </p>
+              </div>
+              <div class="d-flex justify-content-center">
+                <img
+                  src="assets/images/product/{{ product.image }}"
+                  class="shadow"
+                  width="170"
+                  height="130"
+                />
+              </div>
+              <h5 class="text-center mt-4">{{ product.name }}</h5>
+              <p class="text-center">{{ product.description }}</p>
+              <div class="d-flex justify-content-between">
+                <h5 class="fw-bold">${{ product.price }}</h5>
+                <button class="btn btn-primary py-1 font-14px">
+                  <i class="pi pi-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

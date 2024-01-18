@@ -1,10 +1,40 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppLayoutComponent } from './component/common/app-layout/app-layout.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: AppLayoutComponent,
+    children: [
+      {
+        path: 'form',
+        loadChildren: () =>
+          import(
+            './component/form/routing/form-routing/form-routing.module'
+          ).then((m) => m.FormRoutingModule),
+      },
+      {
+        path: 'list',
+        loadChildren: () =>
+          import('./component/list/list-routing/list-routing.module').then(
+            (m) => m.ListRoutingModule
+          ),
+      },
+      { path: '', redirectTo: 'form', pathMatch: 'full' },
+    ],
+  },
+  /* authentication routing */
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./auth/routing/routing.module').then((m) => m.RoutingModule),
+  },
+ 
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,0 +1,31 @@
+<section
+  class="p-3 px-lg-4 bg-white shadow header"
+  style="
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.02), 0px 0px 2px rgba(0, 0, 0, 0.05),
+      0px 1px 4px rgba(0, 0, 0, 0.08);
+  "
+>
+  <div class="d-flex">
+    <div class="col-5 col-sm-3 col-lg-3 header-logo">
+      <img src="assets/logo/logo-dark.svg" height="50px" width="50px" />
+      <span class="text-uppercase label-field ms-2">sakai</span>
+    </div>
+    <button
+      class="col-2 col-lg-1 btn bg-white border-0 header-hamburger"
+      (click)="clickBUtton()"
+    >
+      <i class="pi pi-bars font-24px"></i>
+    </button>
+    <div class="col-5 col-lg-8 d-flex justify-content-end header-setting">
+      <button class="btn bg-white border-0">
+        <i class="pi pi-calendar font-24px"></i>
+      </button>
+      <button class="btn bg-white border-0">
+        <i class="pi pi-user font-24px"></i>
+      </button>
+      <button class="btn bg-white border-0">
+        <i class="pi pi-cog font-24px"></i>
+      </button>
+    </div>
+  </div>
+</section>

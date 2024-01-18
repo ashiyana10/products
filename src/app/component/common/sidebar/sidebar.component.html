@@ -1,0 +1,63 @@
+<section
+  class="bg-light vh-100 overflow-auto position-fixed sidebar"
+  [ngClass]="{ 'd-none': !sidebarVisible, 'd-block': sidebarVisible }"
+>
+  <div class="m-4 mt-0 p-3 ps-0 rounded-4 shadow bg-white">
+    <ul class="ps-4">
+      <li class="fw-bold font-12px">HOME</li>
+      <li class="m-2 p-2 nav-link">
+        <a href="#" class="text-decoration-none">
+          <i class="pi pi-fw pi-home"></i
+          ><span class="ms-2 fw-bold font-14px">Dashboard</span></a
+        >
+      </li>
+      <li class="fw-bold font-12px">UI COMPONENTS</li>
+      <li
+        class="m-2 p-2 nav-link"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a class="text-decoration-none" routerLink="/form">
+          <i class="pi pi-fw pi-id-card"></i
+          ><span class="ms-2 fw-bold font-14px">Form Layout</span></a
+        >
+      </li>
+      <li class="m-2 p-2 nav-link">
+        <a href="#" class="text-decoration-none">
+          <i class="pi pi-fw pi-check-square"></i
+          ><span class="ms-2 fw-bold font-14px">Input</span></a
+        >
+      </li>
+      <li class="m-2 p-2 nav-link">
+        <a href="#" class="text-decoration-none">
+          <i class="pi pi-fw pi-bookmark"></i
+          ><span class="ms-2 fw-bold font-14px">Float Label</span></a
+        >
+      </li>
+      <li class="m-2 p-2 nav-link">
+        <a href="#" class="text-decoration-none">
+          <i class="pi pi-fw pi-exclamation-circle"></i
+          ><span class="ms-2 fw-bold font-14px">Invalid State</span></a
+        >
+      </li>
+      <li class="m-2 p-2 nav-link">
+        <a href="#" class="text-decoration-none">
+          <i class="pi pi-fw pi-box"></i
+          ><span class="ms-2 fw-bold font-14px">Button</span></a
+        >
+      </li>
+      <li class="m-2 p-2 nav-link">
+        <a href="#" class="text-decoration-none">
+          <i class="pi pi-fw pi-table"></i
+          ><span class="ms-2 fw-bold font-14px">Table</span></a
+        >
+      </li>
+      <li class="m-2 p-2 nav-link" [routerLinkActive]="['active']">
+        <a href="#" class="text-decoration-none" routerLink="/list">
+          <i class="pi pi-fw pi-list"></i
+          ><span class="ms-2 fw-bold font-14px">List</span></a
+        >
+      </li>
+    </ul>
+  </div>
+</section>

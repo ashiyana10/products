@@ -1,0 +1,59 @@
+<section class="bg-light">
+  <div
+    class="d-flex justify-content-center align-items-center flex-column vh-100 py-2 overflow-auto"
+  >
+    <!-- logo -->
+    <div class="auth-width text-center">
+      <img src="assets/logo/logo-dark.svg" class="text-center" />
+    </div>
+    <!-- login form -->
+    <div class="auth-width">
+      <div class="login-border bg-white mt-3">
+        <div class="p-5 bg-white border-radius-53">
+          <!-- Header title of the login -->
+          <div
+            class="d-flex justify-content-center align-items-center flex-column"
+          >
+            <img src="assets/user/avatar.png" />
+            <h4 class="mt-3">Welcome, Isabel!</h4>
+            <p>Sign in to continue</p>
+          </div>
+          <div>
+            <!-- Login field -->
+            <div>
+              <label class="label-field">Email</label>
+              <input class="form-control" />
+            </div>
+            <!-- Password field -->
+            <div class="mt-3">
+              <label class="label-field">Password</label>
+              <input class="form-control" type="password" />
+            </div>
+            <!-- Remember & forgot password field -->
+            <div class="d-flex justify-content-between mt-3">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                <label class="form-check-label" for="flexCheckDefault">
+                  Remember me
+                </label>
+              </div>
+              <a href="#" class="text-decoration-none">Forgot password?</a>
+            </div>
+            <!-- Submit button of the login -->
+            <input
+              type="submit"
+              class="btn btn-primary form-control mt-5 fw-bold p-3"
+              value="Sign In"
+              routerLink="/form"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

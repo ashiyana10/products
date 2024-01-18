@@ -1,0 +1,16 @@
+<section class="bg-light">
+  <app-header></app-header>
+  <div class="bg-light mt-5">
+    <app-sidebar></app-sidebar>
+    <div
+      class="flex-grow-1"
+      [ngClass]="{
+        'margin-right-section':
+          sidebarVisible && CommonService.screenWidth$.value > 640,
+        'm-0': !sidebarVisible
+      }"
+    >
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</section>

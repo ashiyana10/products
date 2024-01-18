@@ -1,0 +1,28 @@
+.top {
+    top: 4rem;
+}
+
+.border-end-0 {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.border-start-0 {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.product-instock {
+    background: #C8E6C9;
+    color: #256029;
+}
+
+.product-outstock {
+    background: #FFCDD2;
+    color: #C63737;
+}
+
+.product-lowstock {
+    background: #FEEDAF;
+    color: #8A5340;
+}

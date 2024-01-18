@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~primeicons/primeicons.css";
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.label-field {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.border-radius-53 {
+  border-radius: 53px;
+}
+
+/* Extra Small Devices (phones) */
+@media only screen and (max-width: 575.98px) {
+  .auth-width {
+    width: 90%;
+  }
+  .header-logo {
+    text-align: center;
+    order: 2;
+  }
+  .header-hamburger {
+    order: 1;
+  }
+  .header-setting {
+    order: 3;
+  }
+}
+
+/* Small Devices (tablets) */
+@media only screen and (min-width: 576px) and (max-width: 1199.98px) {
+  .auth-width {
+    width: 65%;
+  }
+}
+
+/* Medium Devices (laptops) */
+@media only screen and (min-width: 1200px) {
+  .auth-width {
+    width: 40%;
+  }
+}
+
+.font-24px {
+  font-size: 24px;
+}
+
+.font-12px{
+    font-size: 12px;
+}
+
+.font-14px {
+    font-size: 14px;
+}

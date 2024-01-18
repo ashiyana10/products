@@ -1,0 +1,5 @@
+.login-border {
+    border-radius: 56px;
+    padding: 0.3rem;
+    background: linear-gradient(180deg,  #64B5F6 10%, rgba(33, 150, 243, 0) 30%);
+}
