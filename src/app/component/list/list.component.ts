@@ -20,8 +20,11 @@ export class ListComponent {
       .sort((a, b) => b.price - a.price);
   }
 
+  /**
+   * sort products by price
+   * @param event store the low or high value
+   */
   sortByPrice(event: string): void {
-    console.log(event);
     if (event === 'low') {
       this.filterProducts = this.products
         .slice()
@@ -33,6 +36,10 @@ export class ListComponent {
     }
   }
 
+  /**
+   * search the products based on search bar value
+   * @param search store the search value
+   */
   searchData(search: Event): void {
     const searchValue = (search.target as HTMLInputElement).value;
     const lowerCaseSearchTerm = searchValue.toLowerCase();

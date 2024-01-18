@@ -28,6 +28,7 @@ export class CommonService {
    * @returns the screen width
    */
   setSidebarVisibility(): void {
+     // if screen size less than 640 then hide the sidebar
     if (this.screenWidth$.value < 640) {
       this.sidebarVisible.next(false);
     }

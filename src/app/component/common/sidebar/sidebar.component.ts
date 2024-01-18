@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnDestroy } from '@angular/core';
 import { CommonService } from '../../common.service';
 import { Subscription } from 'rxjs';
 
@@ -7,21 +7,22 @@ import { Subscription } from 'rxjs';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnDestroy {
   sidebarVisible!: boolean;
   private sidebarSubscription: Subscription;
   constructor(private CommonService: CommonService) {
+    /* get the sidebar value for show & hide */
     this.sidebarSubscription = this.CommonService.sidebarVisible.subscribe(
       (value) => {
         this.sidebarVisible = value;
-        console.log(this.sidebarVisible);
       }
     );
   }
-  // Method to handle the window resize event
-  @HostListener('window:resize', ['$event'])
-  onResize() {
-    this.CommonService.screenWidth$.next(window.innerWidth);
-    this.CommonService.setSidebarVisibility()
+
+  /**
+   * unsubscribe the subscription
+   */
+  ngOnDestroy(): void {
+    this.sidebarSubscription.unsubscribe();
   }
 }

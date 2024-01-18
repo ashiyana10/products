@@ -7,6 +7,7 @@ const routes: Routes = [
     path: '',
     component: AppLayoutComponent,
     children: [
+      // form routing
       {
         path: 'form',
         loadChildren: () =>
@@ -14,6 +15,7 @@ const routes: Routes = [
             './component/form/routing/form-routing/form-routing.module'
           ).then((m) => m.FormRoutingModule),
       },
+      // list routing
       {
         path: 'list',
         loadChildren: () =>

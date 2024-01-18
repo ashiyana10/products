@@ -1,21 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CommonService } from '../../common.service';
 
 @Component({
   selector: 'app-app-layout',
   templateUrl: './app-layout.component.html',
-  styleUrls: ['./app-layout.component.css']
+  styleUrls: ['./app-layout.component.css'],
 })
-export class AppLayoutComponent {
-  sidebarVisible!:boolean
+export class AppLayoutComponent implements OnDestroy {
+  sidebarVisible!: boolean;
   private sidebarSubscription: Subscription;
   constructor(public CommonService: CommonService) {
+    /* hide & show the sidebar based on the sidebar visible value which exists on service file */
     this.sidebarSubscription = this.CommonService.sidebarVisible.subscribe(
       (value) => {
         this.sidebarVisible = value;
-        console.log(this.sidebarVisible)
       }
     );
+  }
+
+  /**
+   * unsubscribe the subscription
+   */
+  ngOnDestroy(): void {
+    this.sidebarSubscription.unsubscribe();
   }
 }

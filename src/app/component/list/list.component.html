@@ -1,9 +1,11 @@
 <section class="mx-4 top position-relative">
+  <!-- data view section -->
   <div class="px-4 py-3 bg-white border rounded-3">
     <h5>DataView</h5>
     <div
       class="mt-3 p-3 bg-light d-flex justify-content-between border-top border-bottom"
     >
+    <!-- option for sorting data by price -->
       <select
         class="form-select w-25"
         #price
@@ -12,12 +14,14 @@
         <option value="high">Price High to Low</option>
         <option value="low">Price Low to High</option>
       </select>
+      <!-- serch products -->
       <input
         type="text"
         class="form-control w-25"
         placeholder="Search by Name"
         (keyup)="searchData($event)"
       />
+      <!-- display by grid or list section -->
       <div>
         <button
           class="btn border-end-0 border"
@@ -35,6 +39,7 @@
         </button>
       </div>
     </div>
+    <!-- display products in list view -->
     <div *ngIf="listView">
       <div *ngFor="let product of filterProducts" class="m-5">
         <div class="d-flex justify-content-lg-between flex-wrap">
@@ -68,6 +73,7 @@
         </div>
       </div>
     </div>
+    <!-- display products in grid view -->
     <div *ngIf="!listView">
       <div class="m-5">
         <div class="row">
